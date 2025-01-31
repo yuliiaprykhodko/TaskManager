@@ -1,0 +1,22 @@
+﻿@model List<TaskManager.Models.AppTask>
+
+<h3>Lista Zadań</h3>
+
+@if (Model.Any())
+{
+    <ul class="list-group">
+        @foreach (var task in Model)
+        {
+            <li class="list-group-item">
+                <strong>@task.Title</strong> - @task.Priority
+                <span class="badge bg-secondary float-end">
+                    @(task.IsCompleted ? "Zakończone" : "W toku")
+                </span>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Brak zadań.</p>
+}

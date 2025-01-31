@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TaskManager.Models.ProjectModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista projektów</h1>
+<a class="btn btn-primary" href="/Project/Create">Dodaj nowy projekt</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Opis</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Name</td>
+                <td>@project.Description</td>
+                <td>
+                    <a href="/Project/Details/@project.Id" class="btn btn-info">Szczegóły</a>
+                    <a href="/Project/Edit/@project.Id" class="btn btn-warning">Edytuj</a>
+                    <a href="/Project/Delete/@project.Id" class="btn btn-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

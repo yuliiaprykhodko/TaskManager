@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TaskManager.Models.AppTaskModel>
+
+<h2>Task List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Priority)</th>
+            <th>@Html.DisplayNameFor(model => model.ProjectName)</th>
+            <th>@Html.DisplayNameFor(model => model.DueDate)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Priority</td>
+                <td>@item.ProjectName</td>
+                <td>@item.DueDate.ToString("dd/MM/yyyy")</td>
+                <td>
+                    
+                    <a href="@Url.Action("Details", "AppTasks", new { id = item.Id })">Poglad</a>
+
+                    
+                    <a href="@Url.Action("Edit", "AppTasks", new { id = item.Id })">Edytuj</a>
+
+                    
+                    <a href="@Url.Action("Delete", "AppTasks", new { id = item.Id })">Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

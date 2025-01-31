@@ -1,0 +1,16 @@
+﻿@model TaskManager.Models.UserTaskModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuń przypisane zadanie</h1>
+
+<p>Czy na pewno chcesz usunąć przypisanie zadania: <strong>@Model.Task.Title</strong> dla użytkownika <strong>@Model.UserId</strong>?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+</form>
+
+<a href="/UserTask" class="btn btn-secondary mt-2">Anuluj</a>

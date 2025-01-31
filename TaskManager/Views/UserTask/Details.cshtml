@@ -1,0 +1,13 @@
+﻿@model TaskManager.Models.UserTaskModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegóły przypisanego zadania</h1>
+
+<p><strong>Zadanie:</strong> @Model.Task.Title</p>
+<p><strong>Użytkownik:</strong> @Model.UserId</p>
+
+<a href="/UserTask/Edit/@Model.Id" class="btn btn-warning">Edytuj</a>
+<a href="/UserTask" class="btn btn-secondary">Powrót</a>

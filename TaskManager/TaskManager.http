@@ -1,0 +1,61 @@
+﻿@TaskManager_HostAddress = http://localhost:5150
+
+GET {{TaskManager_HostAddress}}/api/apptasksapi
+
+###
+
+POST {{TaskManager_HostAddress}}/api/apptasksapi
+Content-Type: application/json
+
+{
+  //AppTask
+}
+
+###
+
+@id=0
+DELETE {{TaskManager_HostAddress}}/api/apptasksapi/{{id}}
+
+###
+
+PUT {{TaskManager_HostAddress}}/api/apptasksapi/{{id}}
+Content-Type: application/json
+
+{
+  //AppTask
+}
+
+###
+
+GET {{TaskManager_HostAddress}}/api/apptasksapi
+
+###
+
+GET {{TaskManager_HostAddress}}/api/apptasksapi
+
+###
+
+GET {{TaskManager_HostAddress}}/api/apptaskapi
+
+###
+
+GET {{TaskManager_HostAddress}}/usertasks
+
+###
+
+GET {{TaskManager_HostAddress}}/apptask
+
+###
+
+GET {{TaskManager_HostAddress}}/apptask/create
+
+###
+
+POST {{TaskManager_HostAddress}}/usertasks/create
+Content-Type: application/json
+
+{
+  //UserTask
+}
+
+###

@@ -1,0 +1,25 @@
+﻿@model TaskManager.Models.ProjectModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Dodaj nowy projekt</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Nazwa</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Opis</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Zapisz</button>
+</form>
+
+<a href="/Project" class="btn btn-secondary mt-2">Powrót</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

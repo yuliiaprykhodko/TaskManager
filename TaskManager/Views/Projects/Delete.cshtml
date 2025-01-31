@@ -1,0 +1,16 @@
+﻿@model TaskManager.Models.ProjectModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuń projekt</h1>
+
+<p>Czy na pewno chcesz usunąć projekt: <strong>@Model.Name</strong>?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+</form>
+
+<a href="/Project" class="btn btn-secondary mt-2">Anuluj</a>

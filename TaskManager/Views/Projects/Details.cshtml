@@ -1,0 +1,25 @@
+﻿@model TaskManager.Models.ProjectModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegóły projektu</h1>
+
+<p><strong>Nazwa:</strong> @Model.Name</p>
+<p><strong>Opis:</strong> @Model.Description</p>
+
+<h3>Zadania w projekcie:</h3>
+<ul>
+    @foreach (var task in Model.Tasks)
+    {
+        <li>@task.Title - @task.DueDate.ToShortDateString()</li>
+    }
+</ul>
+
+<a href="/Project/Edit/@Model.Id" class="btn btn-warning">Edytuj</a>
+<a href="/Project" class="btn btn-secondary">Powrót</a>
+
+<partial name="_TaskList" model="Model.Tasks" />
+
+<a href="/projects" class="btn btn-secondary mt-2">Powrót</a>
